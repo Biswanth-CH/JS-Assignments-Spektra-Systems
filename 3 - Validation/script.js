@@ -7,8 +7,8 @@ function validateForm() {
     .value.trim();
   const terms = document.getElementById("terms").checked;
 
-  if (fullName === "") {
-    alert("Please enter your full name.");
+  if (!/^[A-Za-z\s]+$/.test(fullName)) {
+    alert("Full name should contain only letters and spaces.");
     return false;
   }
 
@@ -33,7 +33,7 @@ function validateForm() {
   }
 
   displayConfirmation(fullName, email);
-  return false; 
+  return false;
 }
 
 function displayConfirmation(fullName, email) {
